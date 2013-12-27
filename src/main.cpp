@@ -828,12 +828,12 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 1 * COIN;
+    int64 nSubsidy = 50 * COIN;
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // silvercoin: 1 days
+static const int64 nTargetTimespan = 2 * 24 * 60 * 60; // silvercoin: 1 days
 static const int64 nTargetSpacing = 120; // silvercoin: 2 minute blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
@@ -2014,13 +2014,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1369623856; //epochtime
+        block.nTime    = 1388175456; //epochtime
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 1345972;
 
         if (fTestNet)
         {
-            block.nTime    = 1369591342;
+            block.nTime    = 1388175456;
             block.nNonce   = 440824;
         }
 
